@@ -1,0 +1,107 @@
+@import "scss/settings/mixins";
+@import "scss/settings/variables";
+
+.header__flex {
+  @include flex(flex, space-between, center, row);
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 3px #00000029;
+
+  .header__logo {
+    padding-inline: 10px;
+    font-size: 3.2em;
+    color: map-get($colors, blue-primary);
+  }
+
+  nav {
+    @include desktop {
+      width: 60%;
+    }
+  }
+
+  .header__menu {
+    @include flex(flex, space-around, flex-start, column);
+    position: absolute;
+    top: 55px;
+    left: -100%;
+    height: 200px;
+    width: 100%;
+    padding-block: 10px;
+    font-weight: 700;
+    box-shadow: 0 0 6px #00000029;
+    transition: all 0.5s ease-in;
+    @include desktop {
+      height: 70px;
+      box-shadow: none;
+    }
+
+    .header__menu__nav-item__link {
+      padding-inline: 20px;
+      text-decoration: none;
+      font-size: 1.1em;
+      border-bottom: 3px solid transparent;
+      color: map-get($colors, font-color-forms-menu);
+      transition: all 0.5s ease-in;
+
+      &:hover {
+        color: map-get($colors, font-color-main);
+      }
+
+      @include desktop {
+        padding-block: 30px;
+          &:hover {
+          border-bottom: 3px solid map-get($colors, blue-primary);
+        }
+      }
+    }
+
+    &.active {
+      left: 0;
+      min-height: 200px;
+    }
+
+    @include desktop {
+      @include flex(flex, space-evenly, center, row);
+      column-gap: 30px;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.header__menu__hamburger {
+  display: block;
+  padding: 20px;
+  cursor: pointer;
+
+  &.active {
+    .hamburger__bar {
+      &:first-of-type {
+        opacity: 0;
+      }
+
+      &:nth-of-type(2) {
+        transform: translateY(0px) rotate(45deg);
+      }
+
+      &:nth-of-type(3) {
+        transform: translateY(-5px) rotate(-45deg);
+      }
+    }
+  }
+
+  .hamburger__bar {
+    display: block;
+    width: 20px;
+    height: 3px;
+    margin-bottom: 2px;
+    background-color: map-get($colors, blue-secondary);
+    transition: all 0.5s ease-in-out;
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
