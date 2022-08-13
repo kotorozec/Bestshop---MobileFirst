@@ -1,1 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&family=Raleway:wght@300;400;700;800&display=swap');
+@import "scss/settings/mixins";
+@import "scss/settings/variables";
+h1 {
+  font-size:4.1em;
+  @include tablet {
+    font-size:5.7em;
+  }
+}

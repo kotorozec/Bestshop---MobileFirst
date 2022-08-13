@@ -1,0 +1,42 @@
+@import "scss/settings/mixins";
+@import "scss/settings/variables";
+
+.opening-section {
+  position: relative;
+  top: 10px;
+  z-index: -1;
+}
+
+.opening__flex {
+  @include flex(flex, center, center, column);
+  width: 100%;
+  padding-block: 80px 0;
+  @include desktop {
+    padding-block: 100px 0;
+  }
+
+  .opening-section__paragraph {
+    padding-block: 20px 28px;
+    font-family: $secondary-font;
+    font-size: 1.6em;
+    line-height: 2.2em;
+    text-align: center;
+    width: 70%;
+  }
+
+}
+
+.opening-section__img-container {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: transparent url("/assets/Background.png") no-repeat bottom/cover;
+  @mixin retina {
+    background: transparent url("/assets/Background@2x.png") no-repeat bottom/contain;
+  }
+  @include tablet {
+    aspect-ratio: 2/1;
+    background-position: top;
+    background-size: contain;
+
+  }
+}

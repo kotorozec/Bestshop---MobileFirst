@@ -1,12 +1,17 @@
 @import "scss/settings/mixins";
 @import "scss/settings/variables";
 
+header {
+  box-shadow: 0 0 3px #00000029;
+  width: 100%;
+  min-height: 70px;
+}
+
 .header__flex {
   @include flex(flex, space-between, center, row);
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 0 0 3px #00000029;
 
   .header__logo {
     padding-inline: 10px;
@@ -23,9 +28,9 @@
   .header__menu {
     @include flex(flex, space-around, flex-start, column);
     position: absolute;
-    top: 55px;
+    top: 70px;
     left: -100%;
-    height: 200px;
+    height: 150px;
     width: 100%;
     padding-block: 10px;
     font-weight: 700;
@@ -38,8 +43,9 @@
 
     .header__menu__nav-item__link {
       padding-inline: 20px;
-      text-decoration: none;
+      font-family: $secondary-font;
       font-size: 1.1em;
+      text-decoration: none;
       border-bottom: 3px solid transparent;
       color: map-get($colors, font-color-forms-menu);
       transition: all 0.5s ease-in;
@@ -49,7 +55,7 @@
       }
 
       @include desktop {
-        padding-block: 30px;
+        padding-block: 27px;
           &:hover {
           border-bottom: 3px solid map-get($colors, blue-primary);
         }
@@ -58,7 +64,8 @@
 
     &.active {
       left: 0;
-      min-height: 200px;
+      min-height: 150px;
+      background-color:map-get($colors,main-white);
     }
 
     @include desktop {

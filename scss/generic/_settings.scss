@@ -13,6 +13,7 @@ html {
 body {
   font-family: $main-font;
   background-color: map-get($colors, main-white);
+  min-height: 100vh;
 }
 
 .container {
