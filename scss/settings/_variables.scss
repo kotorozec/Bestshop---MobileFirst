@@ -1,0 +1,20 @@
+@use "sass:map";
+$default-font-size:10px;
+$main-font:'Raleway', sans-serif;
+$secondary-font:'Open Sans', sans-serif;
+$colors: (
+        main-white:#fff,
+        blue-primary:#08A6E4,
+        blue-secondary:#07ACE6,
+        red-primary:#FB3B64,
+        red-secondary:#EB476E,
+        green-primary:#55DFB4,
+        font-color-main:#000000,
+        font-color-forms-contact:#A5A5A5,
+        font-pricing:#13253B,
+        background-for-benefits:#E8E9ED,
+        shadow-blue:#07ACE629,
+        shadow-drop:#00000029,
+        forms-border-color:#95989A,
+        forms-gdpr-color:#707070,
+);

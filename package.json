@@ -1,0 +1,15 @@
+{
+  "name": "BestShop",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.6.0"
+  },
+  "dependencies": {
+    "scss-reset": "^1.2.2"
+  }
+}

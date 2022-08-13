@@ -1,0 +1,23 @@
+@import "scss/settings/variables";
+@import "scss/settings/mixins";
+@import "scss/generic/fonts";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $default-font-size;
+}
+
+body {
+  font-family: $main-font;
+  background-color: map-get($colors, main-white);
+}
+
+.container {
+  max-width: 1352px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 15px;
+}
