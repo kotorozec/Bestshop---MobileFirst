@@ -120,7 +120,6 @@
 }
 
 .img {
-  max-width: 450px;
   width: 100%;
   min-height: 300px;
 
@@ -137,15 +136,19 @@
 
   &.--phone {
     background: transparent url("/assets/iPhone2.png") no-repeat center/contain;
+    margin-top:20px;
     @include retina {
       background: transparent url("/assets/iPhone2@2x.png") no-repeat center/contain;
     }
   }
 
   &.--trumpet {
-    background: map-get($colors, green-primary) url("/assets/Trumpet.png") no-repeat -20px 60px/contain;
+    background: map-get($colors, green-primary) url("/assets/Trumpet.png") no-repeat 50% 100px/contain;
+    @include desktop {
+      background: map-get($colors, green-primary) url("/assets/Trumpet.png") no-repeat 20px 50px/contain;
+    }
     @include retina {
-      background: map-get($colors, green-primary) url("/assets/Trumpet@2x.png") no-repeat -20px 60px/contain;
+      background: map-get($colors, green-primary) url("/assets/Trumpet@2x.png") no-repeat center/contain;
     }
   }
 }

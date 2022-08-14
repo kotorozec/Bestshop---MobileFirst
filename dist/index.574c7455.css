@@ -736,29 +736,13 @@ header {
 }
 
 .img {
-  max-width: 450px;
   width: 100%;
   min-height: 300px;
 }
 
 .img.--laptop {
-  z-index: 2;
   background: url("Macbook2.e262d24b.png") center / contain no-repeat;
   order: -1;
-  position: relative;
-}
-
-.img.--laptop:before {
-  content: "";
-  width: 180px;
-  height: 180px;
-  background-color: #fb3b64;
-  border-radius: 40px;
-  display: block;
-  position: absolute;
-  top: 30px;
-  right: 0;
-  transform: rotate(45deg);
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2x) {
@@ -775,6 +759,7 @@ header {
 
 .img.--phone {
   background: url("iPhone2.5d3996c3.png") center / contain no-repeat;
+  margin-top: 20px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2x) {
@@ -784,12 +769,18 @@ header {
 }
 
 .img.--trumpet {
-  background: #55dfb4 url("Trumpet.041da3b3.png") -20px 60px / contain no-repeat;
+  background: #55dfb4 url("Trumpet.041da3b3.png") 50% 100px / contain no-repeat;
+}
+
+@media only screen and (min-width: 992px) {
+  .img.--trumpet {
+    background: #55dfb4 url("Trumpet.041da3b3.png") 20px 50px / contain no-repeat;
+  }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2x) {
   .img.--trumpet {
-    background: #55dfb4 url("Trumpet@2x.8de01056.png") -20px 60px / contain no-repeat;
+    background: #55dfb4 url("Trumpet@2x.8de01056.png") center / contain no-repeat;
   }
 }
 
