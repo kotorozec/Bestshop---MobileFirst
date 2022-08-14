@@ -21,13 +21,14 @@
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 25px;
+  padding-bottom:50px;
   text-align: center;
   @include tablet {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-article {
+.benefits__article {
   @include flex(flex,center,center,column);
   .benefits__article-background {
     @include flex(flex,center,center,row);

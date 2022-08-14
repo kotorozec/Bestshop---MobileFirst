@@ -1,0 +1,157 @@
+@import "scss/settings/mixins";
+@import "scss/settings/variables";
+
+.chose-us {
+  background-color: map-get($colors, background-for-benefits);
+}
+
+.chose-us__grid {
+  display: grid;
+  grid-template-columns:1fr;
+  row-gap: 30px;
+  padding-top: 40px;
+}
+
+//.chose-us__flex {
+//  @include flex(flex,center,center,column);
+//  background: map-get($colors,main-white);
+//
+//  &:last-of-type {
+//    @include flex(flex,center,center,column);
+//    @include desktop {
+//      @include flex(flex,space-between,flex-start,row);
+//    }
+//    .--trumpet {
+//      order:2
+//    }
+//  }
+//  @include desktop{
+//    @include flex(flex,space-evenly,center,row);
+//    &:first-of-type {
+//      .--laptop {
+//        order:2
+//      }
+//    }
+//    &:last-of-type {
+//      .--trumpet {
+//        order:2
+//      }
+//    }
+//  }
+//  .img {
+//    width: 100%;
+//  aspect-ratio: 1;
+//    max-width: 300px;
+//    &.--laptop {
+//      background: transparent url("/assets/Macbook2.png") no-repeat center/contain;
+//    }
+//    &.--phone {
+//      background: transparent url("/assets/iPhone2.png") no-repeat center/contain;
+//    }
+//    &.--trumpet {
+//      background: map-get($colors,green-primary) url("/assets/Trumpet.png") no-repeat 0 80%/contain;
+//    }
+//  }
+//  .chose-us-txt {
+//    @include flex(flex,center,flex-start,column);
+//    height: 100%;
+//    padding-inline: 100px;
+//  }
+//}
+//
+//
+//.inner {
+//  background-color: map-get($colors,background-for-benefits);
+//  height: 100%;
+//  width: 150px;
+//}
+
+.chose-us__flex {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  place-content: space-between;
+  background-color: map-get($colors, main-white);
+
+  h2 {
+    font-size: 3em;
+    padding-block: 20px 30px;
+    padding-inline: 50px;
+    text-align: left;
+    @include tablet {
+      font-size: 3.6em;
+    }
+  }
+
+  p {
+    font-size: 1.4em;
+    font-family: $secondary-font;
+    padding-inline: 50px;
+    padding-bottom: 30px;
+    text-align: left;
+    @include tablet {
+      font-size: 1.6em;
+    }
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-inline: 100px;
+    place-content: center;
+    &:last-of-type {
+      grid-template-columns: 1.75fr 0.25fr 1fr;
+      padding-inline: 0;
+    }
+    .chose-us-txt {
+      grid-column: 1 /span 2;
+    }
+    .chose-us-txt-trumpet {
+      grid-column: 1/2;
+    }
+
+    .chose-us-txt-phone {
+      grid-column: 2/4;
+      @include tablet {
+        display: grid;
+        place-items: start;
+      }
+    }
+  }
+}
+
+.img {
+  max-width: 450px;
+  width: 100%;
+  min-height: 300px;
+
+  &.--laptop {
+    background: transparent url("/assets/Macbook2.png") no-repeat center/contain;
+    @include retina {
+      background: transparent url("/assets/Macbook2@2x.png") no-repeat center/contain;
+    }
+    order: -1;
+    @include tablet {
+      order: 3;
+    }
+  }
+
+  &.--phone {
+    background: transparent url("/assets/iPhone2.png") no-repeat center/contain;
+    @include retina {
+      background: transparent url("/assets/iPhone2@2x.png") no-repeat center/contain;
+    }
+  }
+
+  &.--trumpet {
+    background: map-get($colors, green-primary) url("/assets/Trumpet.png") no-repeat -20px 60px/contain;
+    @include retina {
+      background: map-get($colors, green-primary) url("/assets/Trumpet@2x.png") no-repeat -20px 60px/contain;
+    }
+  }
+}
+
+.inner {
+  background-color: map-get($colors, background-for-benefits);
+  height: 100%;
+  width: 100%;
+}

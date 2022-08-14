@@ -587,6 +587,7 @@ header {
   text-align: center;
   grid-template-columns: 1fr;
   row-gap: 25px;
+  padding-bottom: 50px;
   display: grid;
   position: relative;
 }
@@ -597,14 +598,14 @@ header {
   }
 }
 
-article {
+.benefits__article {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
-article .benefits__article-background {
+.benefits__article .benefits__article-background {
   width: 62px;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -615,47 +616,187 @@ article .benefits__article-background {
   position: relative;
 }
 
-article .benefits__article-background:before {
+.benefits__article .benefits__article-background:before {
   position: absolute;
   bottom: 5%;
   left: 55%;
   transform: translateX(-10%);
 }
 
-article .benefits__article-background.--red {
+.benefits__article .benefits__article-background.--red {
   background-color: #fb3b64;
 }
 
-article .benefits__article-background.--red:before {
+.benefits__article .benefits__article-background.--red:before {
   content: url("Person.e8721018.svg");
 }
 
-article .benefits__article-background.--blue {
+.benefits__article .benefits__article-background.--blue {
   background-color: #08a6e4;
 }
 
-article .benefits__article-background.--blue:before {
+.benefits__article .benefits__article-background.--blue:before {
   content: url("Eye.e60e75e7.svg");
   bottom: 15%;
   left: 45%;
 }
 
-article .benefits__article-background.--green {
+.benefits__article .benefits__article-background.--green {
   background-color: #55dfb4;
 }
 
-article .benefits__article-background.--green:before {
+.benefits__article .benefits__article-background.--green:before {
   content: url("Catalog.8507218e.svg");
 }
 
-article .benefits__article__heading {
+.benefits__article .benefits__article__heading {
   padding-top: 14px;
 }
 
-article .benefits__article__description {
+.benefits__article .benefits__article__description {
   color: #a5a5a5;
   padding-top: 20px;
   font-size: 1.7em;
+}
+
+.chose-us {
+  background-color: #e8e9ed;
+}
+
+.chose-us__grid {
+  grid-template-columns: 1fr;
+  row-gap: 30px;
+  padding-top: 40px;
+  display: grid;
+}
+
+.chose-us__flex {
+  background-color: #fff;
+  grid-template-columns: 1fr;
+  place-content: space-between;
+  place-items: center;
+  display: grid;
+}
+
+.chose-us__flex h2 {
+  text-align: left;
+  padding-block: 20px 30px;
+  padding-inline: 50px;
+  font-size: 3em;
+}
+
+@media only screen and (min-width: 768px) {
+  .chose-us__flex h2 {
+    font-size: 3.6em;
+  }
+}
+
+.chose-us__flex p {
+  padding-inline: 50px;
+  text-align: left;
+  padding-bottom: 30px;
+  font-family: Open Sans, sans-serif;
+  font-size: 1.4em;
+}
+
+@media only screen and (min-width: 768px) {
+  .chose-us__flex p {
+    font-size: 1.6em;
+  }
+
+  .chose-us__flex {
+    grid-template-columns: 1fr 1fr 1fr;
+    place-content: center;
+    padding-inline: 100px;
+  }
+
+  .chose-us__flex:last-of-type {
+    grid-template-columns: 1.75fr .25fr 1fr;
+    padding-inline: 0;
+  }
+
+  .chose-us__flex .chose-us-txt {
+    grid-column: 1 / span 2;
+  }
+
+  .chose-us__flex .chose-us-txt-trumpet {
+    grid-column: 1 / 2;
+  }
+
+  .chose-us__flex .chose-us-txt-phone {
+    grid-column: 2 / 4;
+  }
+}
+
+@media only screen and (min-width: 768px) and (min-width: 768px) {
+  .chose-us__flex .chose-us-txt-phone {
+    place-items: start;
+    display: grid;
+  }
+}
+
+.img {
+  max-width: 450px;
+  width: 100%;
+  min-height: 300px;
+}
+
+.img.--laptop {
+  z-index: 2;
+  background: url("Macbook2.e262d24b.png") center / contain no-repeat;
+  order: -1;
+  position: relative;
+}
+
+.img.--laptop:before {
+  content: "";
+  width: 180px;
+  height: 180px;
+  background-color: #fb3b64;
+  border-radius: 40px;
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  transform: rotate(45deg);
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2x) {
+  .img.--laptop {
+    background: url("Macbook2@2x.e6e81fe6.png") center / contain no-repeat;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .img.--laptop {
+    order: 3;
+  }
+}
+
+.img.--phone {
+  background: url("iPhone2.5d3996c3.png") center / contain no-repeat;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2x) {
+  .img.--phone {
+    background: url("iPhone2@2x.53d04bce.png") center / contain no-repeat;
+  }
+}
+
+.img.--trumpet {
+  background: #55dfb4 url("Trumpet.041da3b3.png") -20px 60px / contain no-repeat;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2x) {
+  .img.--trumpet {
+    background: #55dfb4 url("Trumpet@2x.8de01056.png") -20px 60px / contain no-repeat;
+  }
+}
+
+.inner {
+  height: 100%;
+  width: 100%;
+  background-color: #e8e9ed;
 }
 
 /*# sourceMappingURL=index.574c7455.css.map */
