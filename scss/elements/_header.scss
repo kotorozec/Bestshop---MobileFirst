@@ -2,14 +2,16 @@
 @import "scss/settings/variables";
 
 header {
+  position: fixed;
   box-shadow: 0 0 3px #00000029;
   width: 100%;
   min-height: 70px;
+  z-index: 1;
 }
 
 .header__flex {
   @include flex(flex, space-between, center, row);
-  position: fixed;
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
 
@@ -49,7 +51,6 @@ header {
       border-bottom: 3px solid transparent;
       color: map-get($colors, font-color-forms-menu);
       transition: all 0.5s ease-in;
-
       &:hover {
         color: map-get($colors, font-color-main);
       }

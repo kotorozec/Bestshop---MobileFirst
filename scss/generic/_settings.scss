@@ -22,3 +22,47 @@ body {
   margin: 0 auto;
   padding-inline: 15px 15px;
 }
+
+.btn {
+  position: relative;
+  display: inline-block;
+  max-width: 310px;
+  width: 100%;
+  padding:2em 3.7em;
+  border: none;
+  border-radius: 6px;
+  font-family: $secondary-font;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  color:map-get($colors,main-white);
+  @include tablet {
+    max-width: 410px;
+    padding:1.6em 3.7em;
+  }
+
+}
+.btn-primary {
+  color: map-get($colors,blue-primary);
+&::after, &::before {
+  content: '';
+  position: absolute;
+  left:0;
+  top:0;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  border: 3px solid map-get($colors,blue-primary);
+  border-radius: 6px;
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+  &:hover {
+    &::after {
+      transform: translate(-5px, -5px);
+    }
+    &::before {
+      transform: translate(5px, 5px);
+    }
+  }
+}
