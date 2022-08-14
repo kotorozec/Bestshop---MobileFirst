@@ -2,10 +2,12 @@
 @import "scss/settings/variables";
 
 header {
-  position: fixed;
-  box-shadow: 0 0 3px #00000029;
-  width: 100%;
+  position: sticky;
+  top:0;
   min-height: 70px;
+  width: 100%;
+  background-color: map-get($colors,main-white);
+  box-shadow: 0 0 3px #00000029;
   z-index: 1;
 }
 

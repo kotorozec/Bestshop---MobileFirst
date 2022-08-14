@@ -1,0 +1,73 @@
+@import "scss/settings/mixins";
+@import "scss/settings/variables";
+
+.benefits {
+  &.__heading {
+    text-align: center;
+    font-size:3em;
+    padding-block:1em;
+    padding-inline:2em;
+    @include tablet {
+      font-size:3.5em;
+      padding-block:1em 2.5em;
+      padding-inline:2em;
+    }
+  }
+}
+
+
+.benefits__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 25px;
+  text-align: center;
+  @include tablet {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+article {
+  @include flex(flex,center,center,column);
+  .benefits__article-background {
+    @include flex(flex,center,center,row);
+    position: relative;
+    width: 62px;
+    aspect-ratio: 1;
+    border-radius:50%;
+    &::before {
+      position: absolute;
+      left: 55%;
+      bottom: 5%;
+      transform: translateX(-10%);
+    }
+    &.--red {
+      background-color: map-get($colors, red-primary);
+      &::before {
+        content: url(/assets/Person.svg);
+      }
+    }
+    &.--blue {
+      background-color: map-get($colors, blue-primary);
+      &::before {
+        content: url(/assets/Eye.svg);
+        bottom: 15%;
+        left:45%;
+      }
+    }
+    &.--green {
+      background-color: map-get($colors, green-primary);
+      &::before {
+        content: url(/assets/Catalog.svg);
+      }
+    }
+  }
+  .benefits__article__heading {
+    padding-top:14px;
+  }
+  .benefits__article__description {
+    padding-top:20px;
+    font-size:1.7em;
+    color:map-get($colors,font-color-forms-menu);
+  }
+}
