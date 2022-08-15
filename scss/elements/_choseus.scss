@@ -5,156 +5,169 @@
   background-color: map-get($colors, background-for-benefits);
 }
 
-.chose-us__grid {
-  display: grid;
-  grid-template-columns:1fr;
-  row-gap: 30px;
-  padding-top: 40px;
-}
-
-//.chose-us__flex {
-//  @include flex(flex,center,center,column);
-//  background: map-get($colors,main-white);
-//
-//  &:last-of-type {
-//    @include flex(flex,center,center,column);
-//    @include desktop {
-//      @include flex(flex,space-between,flex-start,row);
-//    }
-//    .--trumpet {
-//      order:2
-//    }
-//  }
-//  @include desktop{
-//    @include flex(flex,space-evenly,center,row);
-//    &:first-of-type {
-//      .--laptop {
-//        order:2
-//      }
-//    }
-//    &:last-of-type {
-//      .--trumpet {
-//        order:2
-//      }
-//    }
-//  }
-//  .img {
-//    width: 100%;
-//  aspect-ratio: 1;
-//    max-width: 300px;
-//    &.--laptop {
-//      background: transparent url("/assets/Macbook2.png") no-repeat center/contain;
-//    }
-//    &.--phone {
-//      background: transparent url("/assets/iPhone2.png") no-repeat center/contain;
-//    }
-//    &.--trumpet {
-//      background: map-get($colors,green-primary) url("/assets/Trumpet.png") no-repeat 0 80%/contain;
-//    }
-//  }
-//  .chose-us-txt {
-//    @include flex(flex,center,flex-start,column);
-//    height: 100%;
-//    padding-inline: 100px;
-//  }
-//}
-//
-//
-//.inner {
-//  background-color: map-get($colors,background-for-benefits);
-//  height: 100%;
-//  width: 150px;
-//}
-
-.chose-us__flex {
+.chose-us-grid {
   display: grid;
   grid-template-columns: 1fr;
-  place-items: center;
-  place-content: space-between;
-  background-color: map-get($colors, main-white);
+  row-gap: 30px;
+  padding-top: 30px;
 
-  h2 {
-    font-size: 3em;
-    padding-block: 20px 30px;
-    padding-inline: 50px;
-    text-align: left;
-    @include tablet {
-      font-size: 3.6em;
-    }
-  }
-
-  p {
-    font-size: 1.4em;
-    font-family: $secondary-font;
-    padding-inline: 50px;
-    padding-bottom: 30px;
-    text-align: left;
-    @include tablet {
-      font-size: 1.6em;
-    }
-  }
-
-  @include tablet {
-    grid-template-columns: 1fr 1fr 1fr;
-    padding-inline: 100px;
+  article {
+    background-color: map-get($colors, main-white);
+    display: grid;
     place-content: center;
-    &:last-of-type {
-      grid-template-columns: 1.75fr 0.25fr 1fr;
-      padding-inline: 0;
-    }
-    .chose-us-txt {
-      grid-column: 1 /span 2;
-    }
-    .chose-us-txt-trumpet {
-      grid-column: 1/2;
+    place-items: center;
+    border-radius: 6px;
+    padding-inline: 30px;
+    padding-block: 50px;
+    text-align: center;
+    @include tablet {
+      text-align: left
     }
 
-    .chose-us-txt-phone {
-      grid-column: 2/4;
+    &:last-of-type {
+      padding-inline: 0;
+      padding-block: 0px;
+    }
+
+    img {
+      max-height: 300px;
+      padding-block: 30px;
+      width: 100%;
+    }
+
+    .trumpet {
+      padding-inline: 30px;
+      padding-top: 20px;
+
+      p {
+        padding-bottom: 20px;
+      }
+
       @include tablet {
-        display: grid;
-        place-items: start;
+        padding-inline: 30px;
+      }
+    }
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+      &:last-of-type {
+        grid-template-columns: 1.75fr  0.25fr 1fr;
+      }
+      .macbook-img-container {
+        order: 2;
+      }
+    }
+
+    .txt-container {
+      max-width: 500px;
+      width: 100%;
+
+      h2 {
+        font-size: 3em;
+        padding-bottom: 20px;
+        padding-top: 20px;
+      }
+
+      p {
+        font-size: 1.4em;
+        font-family: $secondary-font;
+      }
+
+      @include tablet {
+        p {
+          font-size: 1.5em;
+          padding-bottom: 30px;
+          border-bottom: 3px solid;
+          max-width: 80%;
+
+          &.--macbook_accent {
+            border-color: map-get($colors, red-primary)
+          }
+
+          &.--iphone_accent {
+            border-color: map-get($colors, blue-primary)
+          }
+
+          &.--trumpet_accent {
+            border-color: map-get($colors, green-primary)
+          }
+        }
       }
     }
   }
 }
 
-.img {
+.trumpet-inner {
+  background-color: map-get($colors, background-for-benefits);
+  height: 100%;
   width: 100%;
-  min-height: 300px;
+}
 
-  &.--laptop {
-    background: transparent url("/assets/Macbook2.png") no-repeat center/contain;
-    @include retina {
-      background: transparent url("/assets/Macbook2@2x.png") no-repeat center/contain;
-    }
-    order: -1;
-    @include tablet {
-      order: 3;
-    }
+.trumpet-img-container {
+  background-color: map-get($colors, green-primary);
+  display: grid;
+  justify-self: normal;
+
+  img {
+    margin-top: 80px;
+    object-fit: contain;
+  }
+}
+
+.macbook__img {
+  position: relative;
+  z-index: 1000;
+}
+
+.macbook-img-container {
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 180px;
+    height: 180px;
+    background-color: map-get($colors, red-primary);
+    display: block;
+    border-radius: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(45deg);
+    transition: all 0.5s ease-in-out;
   }
 
-  &.--phone {
-    background: transparent url("/assets/iPhone2.png") no-repeat center/contain;
-    margin-top:20px;
-    @include retina {
-      background: transparent url("/assets/iPhone2@2x.png") no-repeat center/contain;
-    }
-  }
-
-  &.--trumpet {
-    background: map-get($colors, green-primary) url("/assets/Trumpet.png") no-repeat 50% 100px/contain;
-    @include desktop {
-      background: map-get($colors, green-primary) url("/assets/Trumpet.png") no-repeat 20px 50px/contain;
-    }
-    @include retina {
-      background: map-get($colors, green-primary) url("/assets/Trumpet@2x.png") no-repeat center/contain;
+  &:hover {
+    &::before {
+      transform: rotate(45deg) scale(1.2);
     }
   }
 }
 
-.inner {
-  background-color: map-get($colors, background-for-benefits);
-  height: 100%;
-  width: 100%;
+
+.iphone__img {
+  position: relative;
+}
+
+.iphone-img-container {
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 320px;
+    height: 320px;
+    background-color: map-get($colors, blue-primary);
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    transform: rotate(45deg);
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      transform: rotate(45deg) scale(1.1);
+    }
+  }
 }
