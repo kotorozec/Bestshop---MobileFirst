@@ -3,13 +3,14 @@
 
 .chose-us {
   background-color: map-get($colors, background-for-benefits);
+  padding-bottom:50px;
 }
 
 .chose-us-grid {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 30px;
-  padding-top: 30px;
+  padding-top: 50px;
 
   article {
     background-color: map-get($colors, main-white);
@@ -26,7 +27,8 @@
 
     &:last-of-type {
       padding-inline: 0;
-      padding-block: 0px;
+      padding-block: 0;
+      place-content: normal;
     }
 
     img {
@@ -124,8 +126,8 @@
 
   &::before {
     content: "";
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     background-color: map-get($colors, red-primary);
     display: block;
     border-radius: 40px;
@@ -134,6 +136,10 @@
     top: 0;
     transform: rotate(45deg);
     transition: all 0.5s ease-in-out;
+    @include tablet {
+      width: 180px;
+      height: 180px;
+    }
   }
 
   &:hover {

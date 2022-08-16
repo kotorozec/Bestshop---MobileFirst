@@ -14,6 +14,7 @@ body {
   font-family: $main-font;
   background-color: map-get($colors, main-white);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .container {
@@ -26,25 +27,28 @@ body {
 .btn {
   position: relative;
   display: inline-block;
-  max-width: 310px;
+  max-width: 210px;
   width: 100%;
-  padding:2em 3.7em;
+  padding:1em;
   border: none;
-  border-radius: 6px;
+  border-radius: 100vh;
   font-family: $secondary-font;
   font-size: 1.6em;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
   color:map-get($colors,main-white);
-  @include tablet {
-    max-width: 410px;
-    padding:1.6em 3.7em;
-  }
-
 }
 .btn-primary {
   color: map-get($colors,blue-primary);
+  padding:2em 3.7em;
+  max-width: 310px;
+  @include tablet {
+    @include tablet {
+      max-width: 410px;
+      padding:1.6em 3.7em;
+    }
+  }
 &::after, &::before {
   content: '';
   position: absolute;

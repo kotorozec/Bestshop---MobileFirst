@@ -1,0 +1,155 @@
+@use'sass:color';
+
+@import "scss/settings/mixins";
+@import "scss/settings/variables";
+
+.container-headings {
+  @extend .container;
+  @include flex(flex,center,center,row);
+  padding-top:50px;
+  h2 {
+    font-size:3.6em;
+  }
+  @include desktop {
+    padding-top:100px;
+  }
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap:50px;
+  padding-top:30px;
+  @include desktop {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap:30px;
+    padding-block:50px 80px;
+  }
+}
+
+.price__article {
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  column-gap:40px;
+  place-items: center;
+  place-self: center;
+  max-width: 360px;
+  width: 100%;
+  min-height: 400px;
+  padding-inline: 30px;
+  border-radius: 40px;
+  border:3px solid;
+  position: relative;
+  @include tablet {
+    min-height: 500px;
+    max-width: 400px;
+  }
+
+  &.--red-accent {
+    border-color: map-get($colors,red-secondary);
+  }
+  &.--blue-accent {
+    border-color: map-get($colors,blue-secondary);
+  }
+  &.--green-accent {
+    border-color: map-get($colors,green-primary);
+  }
+  @include desktop {
+    grid-template-columns: 1fr;
+  }
+  .btn {
+    position: absolute;
+    bottom:0;
+    transform: translateY(50%);
+    transition: background-color 0.5s ease-in-out;
+    &.btn--blue-accent {
+      background-color: map-get($colors,blue-secondary);
+      &:hover {
+        background-color: darken(map-get($colors,blue-secondary),5%);
+      }
+    }
+    &.btn--red-accent {
+      background-color: map-get($colors,red-secondary);
+      &:hover {
+        background-color: color.scale(map-get($colors,red-secondary), $lightness: 10%);
+      }
+    }
+    &.btn--green-accent {
+      background-color: map-get($colors,green-primary);
+      &:hover {
+        background-color: darken(map-get($colors,green-primary),15%);
+      }
+    }
+  }
+  .price__article__include {
+    ul {
+      @include flex(flex,space-evenly,start,column);
+      row-gap:30px;
+      height: 100%;
+      @include desktop {
+        align-items: center;
+      }
+      li {
+        font-size: 1.4em;
+        font-family: $secondary-font;
+        @include tablet {
+          font-size:1.6em;
+        }
+      }
+      .include {
+        position: relative;
+        &::after {
+          content: '\f00c';
+          display: block;
+          position: absolute;
+          left:-30px;
+          top:0;
+          width: 20px;
+          height: 20px;
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          text-align: center;
+          color:map-get($colors,green-primary);
+          border: 3px solid map-get($colors,green-primary);
+        }
+      }
+      .not-include {
+     @extend .include;
+        &::after {
+          @extend .include;
+          content:'\58';
+          border-color:map-get($colors,red-secondary);
+          color:map-get($colors,red-secondary);
+        }
+      }
+    }
+  }
+  .price__article__content {
+    display: grid;
+    place-items: center;
+    h2 {
+      font-size:2em;
+      font-weight: bold;
+    }
+    p {
+      padding-top:10px;
+      font-size: 6.4em;
+      &.red--alert {
+        color:map-get($colors,red-secondary);
+      }
+      &.blue--alert {
+        color:map-get($colors,blue-secondary);
+      }
+      &.green--alert {
+        color:map-get($colors,green-primary);
+      }
+    }
+  }
+}
+
+.price__article__include {
+  padding-bottom: 20px;
+  @include desktop {
+    padding-bottom: 50px;
+  }
+}
