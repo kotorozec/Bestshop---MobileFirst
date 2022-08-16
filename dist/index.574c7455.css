@@ -412,8 +412,7 @@ header {
   align-items: center;
   display: flex;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
 }
 
 .header__flex .header__logo {
