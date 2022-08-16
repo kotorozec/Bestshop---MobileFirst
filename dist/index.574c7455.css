@@ -877,7 +877,7 @@ header {
   max-width: 360px;
   width: 100%;
   min-height: 400px;
-  border: 3px solid;
+  border: 2px solid;
   border-radius: 40px;
   grid-template-columns: 1fr 1fr;
   place-self: center;
@@ -976,12 +976,14 @@ header {
 
 .price__article .price__article__include ul .include:after, .price__article .price__article__include ul .not-include:after {
   content: "";
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   text-align: center;
   color: #55dfb4;
-  border: 3px solid #55dfb4;
+  border: 2px solid #55dfb4;
+  padding-top: 2px;
   font-family: "Font Awesome 5 Free";
+  font-size: 15px;
   font-weight: 900;
   display: block;
   position: absolute;
